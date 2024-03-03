@@ -1,0 +1,35 @@
+---
+import Fuse from "fuse.js";
+
+import Searcher from "../components/Search";
+import { getPublishedPosts } from "../data/posts";
+import BaseLayout from "../layouts/base.astro";
+
+const posts = await getPublishedPosts();
+
+const renderedPosts = await Promise.all(
+  posts.map(async (post) => {
+    return {
+      title: post.data.title,
+      description: post.data.description,
+      slug: post.slug,
+      image: post.data.image,
+      date: new Date(post.data.last_modified_at ?? post.data.published_at),
+      body: await post.render(),
+      searchTerms: post.data.searchTerms,
+    };
+  }),
+);
+
+const postIndex = Fuse.createIndex(
+  ["slug", "title", "description", "body", "searchTerms"],
+  renderedPosts,
+);
+---
+
+<BaseLayout>
+  <div class="flex flex-col gap-5">
+    <h1 class="text-2xl dark:text-gray-200 font-medium">Search posts</h1>
+    <Searcher client:load items={renderedPosts} index={postIndex} />
+  </div>
+</BaseLayout>

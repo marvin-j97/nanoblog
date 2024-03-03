@@ -1,0 +1,57 @@
+---
+import PostListing from "../components/PostListing";
+import config from "../config";
+import { getPublishedPosts } from "../data/posts";
+import BaseLayout from "../layouts/base.astro";
+import { createPagination, getPage } from "../util/pagination";
+
+interface Props {
+  page: number;
+}
+
+const { page } = Astro.props;
+
+const publishedPosts = await getPublishedPosts();
+const { pageCount } = createPagination(publishedPosts.length, config.layout.pageSize);
+const posts = getPage(publishedPosts, page, config.layout.pageSize);
+
+const canGoBack = page > 0;
+const canGoNext = page < pageCount - 1;
+---
+
+<BaseLayout>
+  <div class="flex flex-col gap-5">
+    <h1 class="text-2xl dark:text-gray-200 font-medium">All posts</h1>
+    <PostListing
+      listStyle={config.layout.postListStyle}
+      items={posts.map((post) => ({
+        slug: post.slug,
+        description: post.data.description,
+        title: post.data.title,
+        date: new Date(post.data.last_modified_at ?? post.data.published_at),
+        image: post.data.image,
+      }))}
+    />
+    <div class="flex justify-center items-center gap-3">
+      <a href={canGoBack ? `/posts/${page + 1 - 1}` : undefined}>
+        <button
+          disabled={!canGoBack}
+          class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-sky-800 enabled:hover:bg-sky-50 enabled:dark:text-sky-300 font-medium px-2 py-1 enabled:hover:dark:bg-sky-950/50 rounded-lg transition-all"
+        >
+          Back
+        </button>
+      </a>
+      <div class="text-lg font-medium text-center">
+        {page + 1} / {pageCount}
+      </div>
+      <a href={canGoNext ? `/posts/${page + 1 + 1}` : undefined}>
+        <button
+          disabled={!canGoNext}
+          class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-sky-800 enabled:hover:bg-sky-50 enabled:dark:text-sky-300 font-medium px-2 py-1 enabled:hover:dark:bg-sky-950/50 rounded-lg transition-all"
+        >
+          Next
+        </button>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+import Footer from "../components/Footer.astro";
+import Topbar from "../components/Topbar.astro";
+import config from "../config";
+
+interface Props {
+  title?: string;
+  description?: string;
+  author?: string | undefined;
+}
+
+const { author, description, title } = Astro.props;
+
+const siteTitle = title ? `${title} | ${config.site.title}` : config.site.title;
+
+const siteUrl = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- SEO -->
+    <title>{siteTitle}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description || config.site.description} />
+    {author && <meta name="author" content={author} />}
+
+    <!-- OG -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+
+    <ViewTransitions />
+  </head>
+  <body class="text-gray-700 dark:text-gray-400 dark:bg-gray-950">
+    <Topbar />
+    <main class="px-4 pt-30 mx-auto max-w-3xl">
+      <slot />
+    </main>
+    <Footer />
+    <style is:global>
+      html.dark .astro-code,
+      html.dark .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
+      }
+    </style>
+  </body>
+</html>

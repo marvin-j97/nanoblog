@@ -1,0 +1,57 @@
+---
+import TagList from "../components/TagList.astro";
+import config from "../config";
+
+interface Props {
+  title: string;
+  publishedAt: Date;
+  author?: string | undefined;
+  image?: string | undefined;
+  readingMinutes: number;
+  tags: string[];
+}
+
+const { title, publishedAt, author, readingMinutes, tags, image } = Astro.props;
+---
+
+<div class="flex flex-col gap-4">
+  <h1 class="text-sky-800 dark:text-sky-400 text-4xl md:text-5xl font-bold">
+    {title}
+  </h1>
+  <div class="flex items-center gap-2">
+    {
+      author && (
+        <>
+          <div>
+            by <i>{author}</i>
+          </div>
+          -
+        </>
+      )
+    }
+    <div>
+      {
+        new Intl.DateTimeFormat("en", {
+          dateStyle: "long",
+        }).format(new Date(publishedAt))
+      }
+    </div>
+    {
+      config.post.reading_time.enabled && (
+        <>
+          - <div>{readingMinutes} min. read</div>
+        </>
+      )
+    }
+  </div>
+  {tags.length > 0 && <TagList transition items={tags} />}
+  {
+    image && (
+      <img
+        class="mt-5 rounded-xl w-full object-cover aspect-2"
+        src={image}
+        alt="Blog post thumbnail"
+      />
+    )
+  }
+</div>

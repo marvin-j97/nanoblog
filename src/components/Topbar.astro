@@ -1,0 +1,86 @@
+---
+import Logo from "../components/Logo.astro";
+import ThemeSwitch from "../components/ThemeSwitch.astro";
+import config from "../config";
+---
+
+<header
+  class="backdrop-blur w-full px-8 py-5 fixed z-10 border-b dark:border-gray-900 bg-white/80 dark:bg-gray-950/75"
+>
+  <div class="flex items-center gap-5 mx-auto w-full max-w-3xl">
+    <a
+      class="text-black dark:text-white font-medium transition-colors hover:brightness-80"
+      href="/"
+      class="text-lg"
+    >
+      <Logo />
+    </a>
+    <div class="flex-grow"></div>
+    <div class="flex items-center gap-4">
+      {
+        config.layout.topbar.links.map(([text, url]) => (
+          <a
+            href={url}
+            class="text-gray-800 dark:text-gray-400 transition-colors hover:brightness-80"
+          >
+            {text}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex items-center gap-3">
+      <a
+        href="/search"
+        aria-label="Search content"
+        class="transition-all hover:brightness-80 hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-search"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path><path d="M21 21l-6 -6"
+          ></path></svg
+        >
+      </a>
+      {config.layout.topbar.showThemeSwitch && <ThemeSwitch />}
+      {
+        config.layout.topbar.showRssFeed && (
+          <a
+            target="_blank"
+            href="/rss.xml"
+            aria-label="Get RSS feed"
+            class="transition-all hover:brightness-80 hover:scale-105"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-rss"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                <path d="M4 4a16 16 0 0 1 16 16" />
+                <path d="M4 11a9 9 0 0 1 9 9" />
+              </>
+            </svg>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</header>

@@ -1,0 +1,68 @@
+---
+import PostHeader from "../../components/PostHeader.astro";
+import ReadingProgressBar from "../../components/ReadingProgressBar.astro";
+import TagList from "../../components/TagList.astro";
+import config from "../../config";
+import { getPublishedPosts } from "../../data/posts";
+import BaseLayout from "../../layouts/base.astro";
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const readingMinutes = Math.max(
+  1,
+  Math.round(post.body.split(" ").length / config.post.reading_time.speed),
+);
+---
+
+<BaseLayout author={post.data.author} title={post.data.title} description={post.data.description}>
+  <!-- Global -->
+  {config.post.show_reading_progress && <ReadingProgressBar />}
+
+  <!-- Post header -->
+  <PostHeader
+    title={post.data.title}
+    author={post.data.author}
+    readingMinutes={readingMinutes}
+    tags={post.data.tags}
+    publishedAt={new Date(post.data.last_modified_at ?? post.data.published_at)}
+    image={post.data.image}
+  />
+
+  <!-- Content -->
+  <article class="my-10 w-full !max-w-full prose dark:prose-invert text-justify">
+    <Content />
+  </article>
+
+  <!-- Post footer -->
+  {
+    post.data.tags.length > 0 && (
+      <>
+        <hr class="h-1 mb-2 border-gray-200 dark:border-gray-700" />
+        <div class="flex flex-col gap-3">
+          <div class="dark:text-gray-300 italic">Tags</div>
+          <TagList items={post.data.tags} />
+        </div>
+      </>
+    )
+  }
+</BaseLayout>
+
+<style is:global>
+  article a {
+    color: rgb(7 89 133) !important;
+  }
+
+  .dark article a {
+    color: rgb(56 189 248) !important;
+  }
+</style>

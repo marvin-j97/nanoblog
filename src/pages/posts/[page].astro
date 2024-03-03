@@ -1,0 +1,23 @@
+---
+import config from "../../config";
+import { getPublishedPosts } from "../../data/posts";
+import PostListPage from "../../components/PostListPage.astro";
+import { createPagination, getPossiblePages } from "../../util/pagination";
+
+export async function getStaticPaths() {
+  const publishedPosts = await getPublishedPosts();
+  const { pageCount } = createPagination(publishedPosts.length, config.layout.pageSize);
+
+  const pages = getPossiblePages(pageCount);
+  return pages.map((pageNum) => ({
+    params: {
+      page: pageNum.toString(),
+    },
+  }));
+}
+
+const { page } = Astro.params;
+const parsedPage = +page;
+---
+
+<PostListPage page={parsedPage - 1} />

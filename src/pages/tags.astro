@@ -1,0 +1,27 @@
+---
+import { getUniqueTags } from "../data/tags";
+import BaseLayout from "../layouts/base.astro";
+
+const tags = await getUniqueTags();
+---
+
+<BaseLayout>
+  <div class="flex flex-col gap-5">
+    <h1 class="text-2xl dark:text-gray-200 font-medium">All tags</h1>
+    <ul class="text-lg flex flex-wrap gap-5">
+      {
+        tags.map((tag) => (
+          <li class="transition-all hover:translate-y-[-1px] hover:brightness-90">
+            <a
+              class="font-semibold rounded p-1 text-sky-800 dark:text-sky-400"
+              href={`/tag/${tag}`}
+              transition:name={tag}
+            >
+              #{tag}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

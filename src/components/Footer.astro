@@ -1,0 +1,22 @@
+---
+import config from "../config";
+---
+
+<footer class="text-center py-15 mx-auto max-w-3xl w-full">
+  &copy; {new Date().getFullYear()}
+  {config.site.title}
+  {
+    config.layout.footer.showPoweredBy && (
+      <>
+        - powered by{" "}
+        <a
+          class="text-sky-700 dark:text-sky-300 italic transition-all hover:brightness-80"
+          href="https://github.com/marvin-j97/nanoblog"
+          target="_blank"
+        >
+          nanoblog
+        </a>
+      </>
+    )
+  }
+</footer>
