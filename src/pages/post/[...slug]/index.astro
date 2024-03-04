@@ -1,10 +1,10 @@
 ---
-import PostHeader from "../../components/PostHeader.astro";
-import ReadingProgressBar from "../../components/ReadingProgressBar.astro";
-import TagList from "../../components/TagList.astro";
-import config from "../../config";
-import { getPublishedPosts } from "../../data/posts";
-import BaseLayout from "../../layouts/base.astro";
+import PostHeader from "../../../components/PostHeader.astro";
+import ReadingProgressBar from "../../../components/ReadingProgressBar.astro";
+import TagList from "../../../components/TagList.astro";
+import config from "../../../config";
+import { getPublishedPosts } from "../../../data/posts";
+import BaseLayout from "../../../layouts/base.astro";
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
