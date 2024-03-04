@@ -36,6 +36,14 @@ const siteUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={siteUrl} />
+    <!-- TODO: image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <!-- TODO: <meta property="twitter:image" content={img} /> -->
 
     <ViewTransitions />
   </head>
