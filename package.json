@@ -18,7 +18,7 @@
     "astro": "4.4.11",
     "prettier-plugin-astro": "0.13.0",
     "slug": "8.2.3",
-    "typescript": "5.3.3",
+    "typescript": "5.4.2",
     "unocss": "0.58.5"
   },
   "dependencies": {
