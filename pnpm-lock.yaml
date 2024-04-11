@@ -23,8 +23,8 @@ devDependencies:
     specifier: 3.1.1
     version: 3.1.1
   '@astrojs/solid-js':
-    specifier: 4.0.1
-    version: 4.0.1(solid-js@1.8.15)(vite@5.1.4)
+    specifier: 4.1.0
+    version: 4.1.0(solid-js@1.8.15)(vite@5.1.4)
   '@unocss/reset':
     specifier: 0.58.6
     version: 0.58.6
@@ -181,9 +181,9 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /@astrojs/solid-js@4.0.1(solid-js@1.8.15)(vite@5.1.4):
-    resolution: {integrity: sha512-XjViecwQDEO/e3OWCCORPYtYLS7MUNWvAWGVvNkzhAyVYZbM2fzckp94WkhX/qPu1rPUyNxSMXnN6IXkiVRTwA==}
-    engines: {node: '>=18.14.1'}
+  /@astrojs/solid-js@4.1.0(solid-js@1.8.15)(vite@5.1.4):
+    resolution: {integrity: sha512-q7zZF1P/zaCHYbE3KyA7be31VSlH3FGUiU/1xutifrYRdk+kbiELUW3Z2DjEGf05lJ2GKtZyHmFufxX8tvMoQA==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       solid-js: ^1.8.5
     dependencies:
