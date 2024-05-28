@@ -33,6 +33,7 @@ const taggedPosts = await getTaggedPosts(slug);
         title: post.data.title,
         date: new Date(post.data.last_modified_at ?? post.data.published_at),
         image: post.data.image,
+        tags: post.data.tags,
       }))}
     />
   </div>

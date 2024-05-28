@@ -30,6 +30,7 @@ const canGoNext = page < pageCount - 1;
         title: post.data.title,
         date: new Date(post.data.last_modified_at ?? post.data.published_at),
         image: post.data.image,
+        tags: post.data.tags,
       }))}
     />
     <div class="flex justify-center items-center gap-3">

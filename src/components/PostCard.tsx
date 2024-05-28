@@ -1,5 +1,4 @@
 import { Show, type JSXElement } from "solid-js";
-import TagList from "./TagList.astro";
 
 export type Props = {
   slug: string;
