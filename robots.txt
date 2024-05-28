@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marvin-j97.github.io/nanoblog/sitemap-index.xml
