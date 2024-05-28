@@ -49,7 +49,7 @@ const { title, publishedAt, author, readingMinutes, tags, image } = Astro.props;
     image && (
       <img
         class="mt-5 rounded-xl w-full object-cover aspect-2"
-        src={image}
+        src={config.site.baseUrl + image}
         alt="Blog post thumbnail"
       />
     )

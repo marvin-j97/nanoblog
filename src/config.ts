@@ -9,6 +9,9 @@ export default {
     url: "https://marvin-j97.github.io/nanoblog",
 
     // SETUP:
+    baseUrl: "/nanoblog",
+
+    // SETUP:
     /// Your site's title
     title: "nanoblog",
 

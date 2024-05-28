@@ -10,7 +10,7 @@ import config from "../config";
   <div class="flex items-center gap-5 mx-auto w-full max-w-3xl">
     <a
       class="text-black dark:text-white font-medium transition-colors hover:brightness-80"
-      href="/"
+      href={config.site.baseUrl}
       class="text-lg"
     >
       <Logo />
@@ -20,7 +20,7 @@ import config from "../config";
       {
         config.layout.topbar.links.map(([text, url]) => (
           <a
-            href={url}
+            href={config.site.baseUrl + url}
             class="text-gray-800 dark:text-gray-400 transition-colors hover:brightness-80"
           >
             {text}
@@ -30,7 +30,7 @@ import config from "../config";
     </div>
     <div class="flex items-center gap-3">
       <a
-        href="/search"
+        href={`${config.site.baseUrl}/search`}
         aria-label="Search content"
         class="transition-all hover:brightness-80 hover:scale-105"
       >
@@ -55,7 +55,7 @@ import config from "../config";
         config.layout.topbar.showRssFeed && (
           <a
             target="_blank"
-            href="/rss.xml"
+            href={`${config.site.baseUrl}/rss.xml`}
             aria-label="Get RSS feed"
             class="transition-all hover:brightness-80 hover:scale-105"
           >

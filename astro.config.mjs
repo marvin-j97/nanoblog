@@ -15,7 +15,7 @@ export default defineConfig({
     solidJs(),
   ],
   site: config.site.url,
-  base: "/nanoblog",
+  base: config.site.baseUrl,
   prefetch: {
     prefetchAll: true,
     defaultStrategy: "hover",

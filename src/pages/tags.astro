@@ -1,4 +1,5 @@
 ---
+import config from "../config";
 import { getUniqueTags } from "../data/tags";
 import BaseLayout from "../layouts/base.astro";
 
@@ -14,7 +15,7 @@ const tags = await getUniqueTags();
           <li class="transition-all hover:translate-y-[-1px] hover:brightness-90">
             <a
               class="font-semibold rounded p-1 text-sky-800 dark:text-sky-400"
-              href={`/tag/${tag}`}
+              href={`${config.site.baseUrl}/tag/${tag}`}
               transition:name={tag}
             >
               #{tag}

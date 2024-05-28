@@ -34,7 +34,7 @@ const canGoNext = page < pageCount - 1;
       }))}
     />
     <div class="flex justify-center items-center gap-3">
-      <a href={canGoBack ? `/posts/${page + 1 - 1}` : undefined}>
+      <a href={canGoBack ? `${config.site.baseUrl}/posts/${page + 1 - 1}` : undefined}>
         <button
           disabled={!canGoBack}
           class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-sky-800 enabled:hover:bg-sky-50 enabled:dark:text-sky-300 font-medium px-2 py-1 enabled:hover:dark:bg-sky-950/50 rounded-lg transition-all"
@@ -45,7 +45,7 @@ const canGoNext = page < pageCount - 1;
       <div class="text-lg font-medium text-center">
         {page + 1} / {pageCount}
       </div>
-      <a href={canGoNext ? `/posts/${page + 1 + 1}` : undefined}>
+      <a href={canGoNext ? `${config.site.baseUrl}/posts/${page + 1 + 1}` : undefined}>
         <button
           disabled={!canGoNext}
           class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-sky-800 enabled:hover:bg-sky-50 enabled:dark:text-sky-300 font-medium px-2 py-1 enabled:hover:dark:bg-sky-950/50 rounded-lg transition-all"

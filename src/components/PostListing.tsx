@@ -2,6 +2,7 @@ import { Switch, type JSXElement, Match, Show } from "solid-js";
 
 import { type Props } from "./PostCard";
 import PostCardGrid from "./PostCardGrid";
+import config from "../config";
 
 export type PostListStyle = "cards" | "compact_list" | "list";
 
@@ -10,21 +11,23 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
     <div class="flex gap-4">
       <Show when={props.showImage}>
         <a
-          href={`/post/${props.slug}`}
+          href={`${config.site.baseUrl}/post/${props.slug}`}
           class="shrink-0 hover:brightness-80 transition-all text-lg font-medium text-sky-700 dark:text-sky-300 truncate"
           aria-label={props.title}
         >
           <div
             class="bg-sky-500/10 object-cover w-[100px] h-full aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
             style={{
-              "background-image": props.image ? `url(${props.image})` : undefined,
+              "background-image": props.image
+                ? `url(${config.site.baseUrl + props.image})`
+                : undefined,
             }}
           />
         </a>
       </Show>
       <div class="truncate">
         <a
-          href={`/post/${props.slug}`}
+          href={`${config.site.baseUrl}/post/${props.slug}`}
           class="hover:brightness-80 transition-all text-lg font-medium text-sky-700 dark:text-sky-300 truncate"
           aria-label={props.title}
         >

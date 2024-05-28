@@ -61,7 +61,7 @@ const featuredPosts = publishedPosts
               tags: post.data.tags ?? [],
             }))}
           />
-          <a class="text-center" href="/posts">
+          <a class="text-center" href={`${config.site.baseUrl}/posts`}>
             <button class="text-sky-800 hover:bg-sky-50 dark:text-sky-300 font-medium p-2 hover:dark:bg-sky-950/50 rounded-lg transition-all">
               Show all posts
             </button>
