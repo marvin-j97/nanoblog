@@ -28,7 +28,3 @@ TODO: show score here https://pagespeed.web.dev/analysis
 - SolidJS
 - FuseJS
 - Tabler Icons
-
-## Planned
-
-- Edit link (disabled by default)
