@@ -37,7 +37,7 @@ const { title, publishedAt, author, readingMinutes, tags, image } = Astro.props;
       }
     </div>
     {
-      config.post.reading_time.enabled && (
+      config.post.readingTime.enabled && (
         <>
           - <div>{readingMinutes} min. read</div>
         </>

@@ -40,6 +40,7 @@ const featuredPosts = publishedPosts
               title: post.data.title,
               date: new Date(post.data.published_at),
               image: post.data.image,
+              tags: post.data.tags ?? [],
             }))}
           />
         </div>
@@ -57,6 +58,7 @@ const featuredPosts = publishedPosts
               title: post.data.title,
               date: new Date(post.data.published_at),
               image: post.data.image,
+              tags: post.data.tags ?? [],
             }))}
           />
           <a class="text-center" href="/posts">

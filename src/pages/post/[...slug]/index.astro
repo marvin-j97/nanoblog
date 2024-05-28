@@ -20,13 +20,13 @@ const { Content } = await post.render();
 
 const readingMinutes = Math.max(
   1,
-  Math.round(post.body.split(" ").length / config.post.reading_time.speed),
+  Math.round(post.body.split(" ").length / config.post.readingTime.speed),
 );
 ---
 
 <BaseLayout author={post.data.author} title={post.data.title} description={post.data.description}>
   <!-- Global -->
-  {config.post.show_reading_progress && <ReadingProgressBar />}
+  {config.post.showReadingProgress && <ReadingProgressBar />}
 
   <!-- Post header -->
   <PostHeader
@@ -64,5 +64,20 @@ const readingMinutes = Math.max(
 
   .dark article a {
     color: rgb(56 189 248) !important;
+  }
+
+  /* TODO: finish table styling */
+  article table {
+    table-layout: auto;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+  }
+
+  article table {
+    border-bottom: 1px solid #fafafa;
+  }
+
+  .dark article table {
+    border: 1px solid #374151;
   }
 </style>

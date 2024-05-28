@@ -1,4 +1,5 @@
-import { type JSXElement } from "solid-js";
+import { Show, type JSXElement } from "solid-js";
+import TagList from "./TagList.astro";
 
 export type Props = {
   slug: string;
@@ -6,6 +7,7 @@ export type Props = {
   description: string;
   image?: string | undefined;
   date: Date;
+  tags: string[];
 };
 
 export default function PostCard(props: Props): JSXElement {
@@ -34,7 +36,20 @@ export default function PostCard(props: Props): JSXElement {
             dateStyle: "medium",
           }).format(props.date)}
         </div>
-        <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">{props.description}</div>
+        <div class="mt-2 text-sm text-gray-600 dark:text-gray-300 truncate">
+          {props.description}
+        </div>
+        <Show when={props.tags?.length > 0}>
+          <ul class="mt-2 flex-wrap text-xs text-sky-800 dark:text-sky-300 flex items-center gap-2">
+            {props.tags.map((tag) => (
+              <li class="mb-2 transition-all hover:translate-y-[-1px] hover:brightness-90">
+                <a class="transition-all hover:dark:bg-sky-800/30 rounded p-2" href={`/tag/${tag}`}>
+                  #{tag}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Show>
       </div>
     </div>
   );

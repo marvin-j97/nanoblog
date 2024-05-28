@@ -21,7 +21,7 @@ export default {
     pageSize: 5,
 
     /// Post list style
-    postListStyle: "list" as PostListStyle,
+    postListStyle: "cards" as PostListStyle,
 
     landingPage: {
       /// Show recent posts on landing page
@@ -47,26 +47,26 @@ export default {
   /// Post page configuration
   post: {
     /// Show reading progress bar on top of page
-    show_reading_progress: true,
+    showReadingProgress: true,
 
     /// Shows a reading time estimate on top of every blog post
-    reading_time: {
+    readingTime: {
       enabled: true,
 
       /// Reading speed in words per minute (WPM) - 200 is a good baseline
       speed: 200,
     },
 
-    /// Code editor configuration
+    /* /// Code editor configuration
     code: {
       /// See https://github.com/shikijs/shiki/blob/main/docs/themes.md
       ///
       /// NOTE: After changing, you need to restart the dev server because
       /// of a bug in Astro
       theme: {
-        dark: "catppuccin-mocha",
-        light: "catppuccin-latte",
+        dark: "vitesse-light",
+        light: "vitesse-light",
       },
-    },
+    }, */
   },
 };

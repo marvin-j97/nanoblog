@@ -2,21 +2,37 @@
 import config from "../config";
 ---
 
-<footer class="text-center py-15 mx-auto max-w-3xl w-full">
-  &copy; {new Date().getFullYear()}
-  {config.site.title}
-  {
-    config.layout.footer.showPoweredBy && (
-      <>
-        - powered by{" "}
-        <a
-          class="text-sky-700 dark:text-sky-300 italic transition-all hover:brightness-80"
-          href="https://github.com/marvin-j97/nanoblog"
-          target="_blank"
-        >
-          nanoblog
-        </a>
-      </>
-    )
-  }
+<footer class="flex flex-col gap-5 py-10 mx-auto max-w-3xl w-full">
+  <!-- TODO: move into a fixed FAB button, outside of footer -->
+  <div class="text-right">
+    <button onclick="scrollToTop()">Back to top</button>
+  </div>
+  <div class="text-center">
+    &copy; {new Date().getFullYear()}
+    {config.site.title}
+    {
+      config.layout.footer.showPoweredBy && (
+        <>
+          - powered by{" "}
+          <a
+            class="text-sky-700 dark:text-sky-300 italic transition-all hover:brightness-80"
+            href="https://github.com/marvin-j97/nanoblog"
+            target="_blank"
+          >
+            nanoblog
+          </a>
+        </>
+      )
+    }
+  </div>
 </footer>
+
+<script is:raw>
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+</script>

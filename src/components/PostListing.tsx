@@ -60,6 +60,7 @@ export default function PostListing(props: {
               title={post.title}
               image={props.listStyle === "list" ? post.image : undefined}
               showImage
+              tags={post.tags}
             />
           ))}
         </div>

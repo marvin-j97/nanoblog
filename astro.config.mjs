@@ -19,9 +19,9 @@ export default defineConfig({
     prefetchAll: true,
     defaultStrategy: "hover",
   },
-  markdown: {
+  /* markdown: {
     shikiConfig: {
       experimentalThemes: config.post.code.theme,
     },
-  },
+  }, */
 });
