@@ -18,6 +18,12 @@ Lightweight Astro blog template.
 
 ## Lighthouse score
 
+<p align="center">
+  <a href="https://pagespeed.web.dev/analysis/https-marvin-j97-github-io-nanoblog-post-setup-nanoblog/6rn7jxn74w?form_factor=mobile">
+    <img width="640" alt="Lighthouse score" src="pagespeed.svg">
+  <a>
+</p>
+
 TODO: show score here https://pagespeed.web.dev/analysis
 
 ## Tech stack
