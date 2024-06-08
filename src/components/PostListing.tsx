@@ -62,7 +62,7 @@ export default function PostListing(props: {
               slug={post.slug}
               title={post.title}
               image={props.listStyle === "list" ? post.image : undefined}
-              showImage
+              showImage={props.listStyle === "list"}
               tags={post.tags}
             />
           ))}

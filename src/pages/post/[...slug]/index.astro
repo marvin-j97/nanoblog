@@ -80,4 +80,24 @@ const readingMinutes = Math.max(
   .dark article table {
     border: 1px solid #374151;
   }
+
+  code:before,
+  code:after {
+    display: none;
+  }
+
+  p code {
+    border-radius: 4px;
+    padding: 2px 4px;
+  }
+
+  .dark p code {
+    color: #d0d0d0 !important;
+    background: rgba(7, 89, 133, 0.4) !important;
+  }
+
+  html:not(.dark) p code {
+    color: black !important;
+    background: rgba(127, 195, 231, 0.4) !important;
+  }
 </style>
