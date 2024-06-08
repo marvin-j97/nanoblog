@@ -60,16 +60,13 @@ export default {
       speed: 200,
     },
 
-    /* /// Code editor configuration
+    /// Code editor configuration
     code: {
       /// See https://github.com/shikijs/shiki/blob/main/docs/themes.md
       ///
       /// NOTE: After changing, you need to restart the dev server because
       /// of a bug in Astro
-      theme: {
-        dark: "vitesse-light",
-        light: "vitesse-light",
-      },
-    }, */
+      theme: "rose-pine-moon",
+    },
   },
 };
