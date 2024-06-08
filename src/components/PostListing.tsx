@@ -38,7 +38,7 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
             dateStyle: "medium",
           }).format(props.date)}
         </div>
-        <div class="dark:text-gray-300">{props.description}</div>
+        <div class="dark:text-gray-300 truncate">{props.description}</div>
       </div>
     </div>
   );
