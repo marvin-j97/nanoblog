@@ -9,9 +9,10 @@ interface Props {
   title?: string;
   description?: string;
   author?: string | undefined;
+  image?: string | null | undefined;
 }
 
-const { author, description, title } = Astro.props;
+const { author, description, title, image } = Astro.props;
 
 const siteTitle = title ? `${title} | ${config.site.title}` : config.site.title;
 
@@ -36,14 +37,13 @@ const siteUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={siteUrl} />
-    <!-- TODO: image -->
+    {image && <meta property="og:image" content={Astro.site + image.slice(1)} />}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={siteUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <!-- TODO: <meta property="twitter:image" content={img} /> -->
 
     <ViewTransitions />
   </head>

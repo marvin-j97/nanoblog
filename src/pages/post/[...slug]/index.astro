@@ -24,7 +24,12 @@ const readingMinutes = Math.max(
 );
 ---
 
-<BaseLayout author={post.data.author} title={post.data.title} description={post.data.description}>
+<BaseLayout
+  image={post.data.image}
+  author={post.data.author}
+  title={post.data.title}
+  description={post.data.description}
+>
   <!-- Global -->
   {config.post.showReadingProgress && <ReadingProgressBar />}
 
