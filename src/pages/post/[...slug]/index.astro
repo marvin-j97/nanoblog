@@ -107,4 +107,14 @@ const readingMinutes = Math.max(
     color: black !important;
     background: rgba(127, 195, 231, 0.4) !important;
   }
+
+  .dark article blockquote {
+    border-left-color: rgb(6, 69, 102) !important;
+  }
+
+  html:not(.dark) article blockquote {
+    border-left-width: 0.25rem;
+    border-left-style: solid;
+    border-left-color: rgb(99, 200, 255) !important;
+  }
 </style>
