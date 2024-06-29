@@ -8,7 +8,7 @@ Lightweight Astro blog template.
 - Fully responsive
 - Light + dark mode
 - Full-text search
-- Featured posts
+- Featured & draft posts
 - Pagination
 - Sitemap generation
 - SEO stuff (meta & OG tags)
