@@ -27,6 +27,9 @@ importers:
       '@astrojs/solid-js':
         specifier: 4.4.0
         version: 4.4.0(solid-js@1.8.18)(vite@5.3.2(@types/node@20.14.9))
+      '@fontsource/atkinson-hyperlegible':
+        specifier: 5.0.20
+        version: 5.0.20
       '@unocss/reset':
         specifier: 0.61.0
         version: 0.61.0
@@ -435,6 +438,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/atkinson-hyperlegible@5.0.20':
+    resolution: {integrity: sha512-YczGmDvJ23lheBaEJGNdUDTUwl1uG6xrU1rG+ftOVCdkmOaXtuZI/zq1KW+02d1eGsqKCrtaabHQMrtLjCYQbg==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2765,6 +2771,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource/atkinson-hyperlegible@5.0.20': {}
 
   '@iconify/types@2.0.0': {}
 

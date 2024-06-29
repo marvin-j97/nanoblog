@@ -1,4 +1,6 @@
 ---
+import "@fontsource/atkinson-hyperlegible";
+
 import { ViewTransitions } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
@@ -53,15 +55,10 @@ const siteUrl = new URL(Astro.url.pathname, Astro.site).href;
       <slot />
     </main>
     <Footer />
-    <!--  <style is:global>
-      html.dark .astro-code,
-      html.dark .astro-code span {
-        color: var(--shiki-dark) !important;
-        background-color: var(--shiki-dark-bg) !important;
-        font-style: var(--shiki-dark-font-style) !important;
-        font-weight: var(--shiki-dark-font-weight) !important;
-        text-decoration: var(--shiki-dark-text-decoration) !important;
+    <style is:global>
+      :not(.astro-code *) {
+        font-family: "Atkinson Hyperlegible", sans-serif;
       }
-    </style> -->
+    </style>
   </body>
 </html>
