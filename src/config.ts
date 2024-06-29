@@ -66,7 +66,10 @@ export default {
       ///
       /// NOTE: After changing, you need to restart the dev server because
       /// of a bug in Astro
-      theme: "rose-pine-moon",
+      theme: {
+        light: "one-light",
+        dark: "rose-pine-moon",
+      },
     },
   },
 };

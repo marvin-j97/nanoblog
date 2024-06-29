@@ -22,7 +22,7 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      theme: config.post.code.theme,
+      themes: config.post.code.theme,
     },
   },
 });
