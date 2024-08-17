@@ -69,8 +69,22 @@ const readingMinutes = Math.max(
     scroll-margin-top: 80px !important;
   }
 
+  article {
+    overflow-x: hidden;
+  }
+
   article a {
     color: rgb(7 89 133) !important;
+    text-decoration: underline dotted !important;
+    text-underline-offset: 3px;
+    display: inline-block;
+    transition:
+      transform 0.1s ease-in-out,
+      filter 0.1s ease-in-out;
+  }
+
+  article a:hover {
+    transform: translateY(-2px);
   }
 
   .dark article a {
@@ -108,13 +122,13 @@ const readingMinutes = Math.max(
   }
 
   .dark p code {
-    color: #d0d0d0 !important;
+    color: rgb(193, 228, 248) !important;
     background: rgba(7, 89, 133, 0.4) !important;
   }
 
   html:not(.dark) p code {
-    color: black !important;
-    background: rgba(127, 195, 231, 0.4) !important;
+    color: rgb(4, 82, 128) !important;
+    background: rgba(153, 212, 245, 0.4) !important;
   }
 
   .dark article blockquote {
