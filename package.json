@@ -10,7 +10,7 @@
     "post:create": "node scripts/create_post.mjs"
   },
   "devDependencies": {
-    "@astrojs/check": "0.7.0",
+    "@astrojs/check": "0.9.3",
     "@astrojs/rss": "4.0.7",
     "@astrojs/sitemap": "3.1.6",
     "@astrojs/solid-js": "4.4.0",
