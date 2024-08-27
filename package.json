@@ -24,6 +24,6 @@
   },
   "dependencies": {
     "fuse.js": "7.0.0",
-    "solid-js": "1.8.18"
+    "solid-js": "1.8.22"
   }
 }
