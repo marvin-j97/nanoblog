@@ -33,12 +33,12 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
         >
           {props.title}
         </a>
-        <div class="text-sm">
+        <div class="text-sm mb-1">
           {new Intl.DateTimeFormat("en", {
             dateStyle: "medium",
           }).format(props.date)}
         </div>
-        <div class="dark:text-gray-300 truncate">{props.description}</div>
+        <div class="dark:text-gray-300 text-sm truncate">{props.description}</div>
       </div>
     </div>
   );
