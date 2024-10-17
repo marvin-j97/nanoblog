@@ -40,8 +40,8 @@ importers:
         specifier: 0.14.1
         version: 0.14.1
       slug:
-        specifier: 9.1.0
-        version: 9.1.0
+        specifier: 10.0.0
+        version: 10.0.0
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -2039,8 +2039,8 @@ packages:
     engines: {node: '>=12.0.0', npm: '>=5.6.0'}
     hasBin: true
 
-  slug@9.1.0:
-    resolution: {integrity: sha512-ioOsCfzQSu+D6NZ8XMCR8IW9FgvF8W7Xzz56hBkB/ALvNaWeBs2MUvvPugq3GCrxfHPFeK6hAxGkY/WLnfX2Lg==}
+  slug@10.0.0:
+    resolution: {integrity: sha512-M8s2PWOUeSCdD4S1NH5lCzXg2zFV1fozrtfr0FSKl65x+EF1rUowj+/vyFlnHgxPxWzT+DL0VXKfYc1DHJoymg==}
     hasBin: true
 
   solid-js@1.8.22:
@@ -4859,7 +4859,7 @@ snapshots:
       arg: 5.0.2
       sax: 1.4.1
 
-  slug@9.1.0: {}
+  slug@10.0.0: {}
 
   solid-js@1.8.22:
     dependencies:
