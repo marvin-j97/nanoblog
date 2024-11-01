@@ -16,7 +16,7 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
           aria-label={props.title}
         >
           <div
-            class="bg-sky-500/10 object-cover w-[100px] h-full aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
+            class="bg-sky-500/10 object-cover bg-center w-[100px] h-full aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
             style={{
               "background-image": props.image
                 ? `url(${config.site.baseUrl + props.image})`

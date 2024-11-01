@@ -16,7 +16,7 @@ export default function PostCard(props: Props): JSXElement {
     <div class="flex flex-col border-2 border-gray-100 dark:border-transparent dark:bg-gray-900 rounded-lg truncate">
       <a href={`${config.site.baseUrl}/post/${props.slug}`} aria-label={props.title}>
         <div
-          class="bg-sky-500/10 object-cover aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
+          class="bg-sky-500/10 object-cover bg-center aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
           style={{
             "background-image": props.image
               ? `url(${config.site.baseUrl + props.image})`
