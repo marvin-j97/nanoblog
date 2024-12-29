@@ -28,8 +28,8 @@ importers:
         specifier: 4.4.1
         version: 4.4.1(solid-js@1.8.22)(vite@5.4.5(@types/node@22.5.5))
       '@fontsource/inter':
-        specifier: 5.0.18
-        version: 5.0.18
+        specifier: 5.1.1
+        version: 5.1.1
       '@unocss/reset':
         specifier: 0.62.3
         version: 0.62.3
@@ -564,8 +564,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/inter@5.0.18':
-    resolution: {integrity: sha512-YCsoYPTcs713sI7tLtxaPrIhXAXvEetGg5Ry02ivA8qUOb3fQHojbK/X9HLD5OOKvFUNR2Ynkwb1kR1hVKQHpw==}
+  '@fontsource/inter@5.1.1':
+    resolution: {integrity: sha512-weN3E+rq0Xb3Z93VHJ+Rc7WOQX9ETJPTAJ+gDcaMHtjft67L58sfS65rAjC5tZUXQ2FdZ/V1/sSzCwZ6v05kJw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2980,7 +2980,7 @@ snapshots:
   '@esbuild/win32-x64@0.23.1':
     optional: true
 
-  '@fontsource/inter@5.0.18': {}
+  '@fontsource/inter@5.1.1': {}
 
   '@iconify/types@2.0.0': {}
 
