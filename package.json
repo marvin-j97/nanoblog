@@ -15,12 +15,12 @@
     "@astrojs/sitemap": "3.1.6",
     "@astrojs/solid-js": "4.4.1",
     "@fontsource/inter": "5.0.18",
-    "@unocss/reset": "0.62.3",
+    "@unocss/reset": "0.65.4",
     "astro": "4.15.6",
     "prettier-plugin-astro": "0.14.1",
     "slug": "9.1.0",
     "typescript": "5.6.2",
-    "unocss": "0.62.3"
+    "unocss": "0.65.4"
   },
   "dependencies": {
     "fuse.js": "7.0.0",
