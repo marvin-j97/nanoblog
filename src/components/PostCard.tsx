@@ -16,7 +16,7 @@ export default function PostCard(props: Props): JSXElement {
     <div class="flex flex-col border-2 border-gray-100 dark:border-transparent dark:bg-gray-900 rounded-lg truncate">
       <a href={`${config.site.baseUrl}/post/${props.slug}`} aria-label={props.title}>
         <div
-          class="bg-sky-500/10 object-cover bg-center aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
+          class="bg-blue-500/10 object-cover bg-center aspect-2 rounded-lg hover:brightness-80 transition-all bg-cover"
           style={{
             "background-image": props.image
               ? `url(${config.site.baseUrl + props.image})`
@@ -28,7 +28,7 @@ export default function PostCard(props: Props): JSXElement {
         <div class="flex truncate">
           <a
             href={`${config.site.baseUrl}/post/${props.slug}`}
-            class="text-xl truncate dark:text-gray-200 transition-all hover:text-sky-500"
+            class="text-xl truncate dark:text-gray-200 transition-all hover:text-blue-500"
             aria-label={props.title}
           >
             {props.title}
@@ -43,11 +43,11 @@ export default function PostCard(props: Props): JSXElement {
           {props.description}
         </div>
         <Show when={props.tags?.length > 0}>
-          <ul class="mt-2 flex-wrap text-xs text-sky-800 dark:text-sky-300 flex items-center gap-2">
+          <ul class="mt-2 flex-wrap text-xs text-blue-800 dark:text-blue-300 flex items-center gap-2">
             {props.tags.map((tag) => (
               <li class="mb-2 transition-all hover:translate-y-[-1px] hover:brightness-90">
                 <a
-                  class="transition-all hover:dark:bg-sky-800/30 rounded p-2"
+                  class="transition-all hover:dark:bg-blue-800/30 rounded p-2"
                   href={`${config.site.baseUrl}/tag/${tag}`}
                 >
                   #{tag}

@@ -37,7 +37,7 @@ const canGoNext = page < pageCount - 1;
       <a href={canGoBack ? `${config.site.baseUrl}/posts/${page + 1 - 1}` : undefined}>
         <button
           disabled={!canGoBack}
-          class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-sky-800 enabled:hover:bg-sky-50 enabled:dark:text-sky-300 font-medium px-2 py-1 enabled:hover:dark:bg-sky-950/50 rounded-lg transition-all"
+          class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-blue-800 enabled:hover:bg-blue-50 enabled:dark:text-blue-300 font-medium px-2 py-1 enabled:hover:dark:bg-blue-950/50 rounded-lg transition-all"
         >
           Back
         </button>
@@ -48,7 +48,7 @@ const canGoNext = page < pageCount - 1;
       <a href={canGoNext ? `${config.site.baseUrl}/posts/${page + 1 + 1}` : undefined}>
         <button
           disabled={!canGoNext}
-          class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-sky-800 enabled:hover:bg-sky-50 enabled:dark:text-sky-300 font-medium px-2 py-1 enabled:hover:dark:bg-sky-950/50 rounded-lg transition-all"
+          class="disabled:cursor-not-allowed disabled:text-gray-600 enabled:text-blue-800 enabled:hover:bg-blue-50 enabled:dark:text-blue-300 font-medium px-2 py-1 enabled:hover:dark:bg-blue-950/50 rounded-lg transition-all"
         >
           Next
         </button>

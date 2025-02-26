@@ -21,10 +21,10 @@ export default {
   },
 
   layout: {
-    pageSize: 5,
+    pageSize: 10,
 
     /// Post list style
-    postListStyle: "cards" as PostListStyle,
+    postListStyle: "list" as PostListStyle,
 
     landingPage: {
       /// Show recent posts on landing page

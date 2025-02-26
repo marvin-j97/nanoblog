@@ -36,7 +36,7 @@ export default function Search(props: Props): JSXElement {
     <div class="flex flex-col gap-5">
       <input
         type="text"
-        class="border-2 dark:border-transparent dark:bg-gray-800 px-4 py-3 rounded-lg w-full outline-none focus:border-sky-500 transition-all dark:text-gray-200"
+        class="border-2 dark:border-transparent dark:bg-gray-800 px-4 py-3 rounded-lg w-full outline-none focus:border-blue-500 transition-all dark:text-gray-200"
         placeholder="Enter search query"
         value={query()}
         onInput={(ev) => setQuery(ev.currentTarget.value)}
