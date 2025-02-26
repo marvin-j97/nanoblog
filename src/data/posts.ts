@@ -7,8 +7,8 @@ export async function getPublishedPosts() {
     .filter((post) => !post.data.draft)
     .sort(
       (a, b) =>
-        +(b.data.published_at) -
-        +(a.data.published_at),
+        +b.data.published_at -
+        +a.data.published_at,
     );
 }
 
