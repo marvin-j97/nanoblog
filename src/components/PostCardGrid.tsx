@@ -4,7 +4,7 @@ import PostCard, { type Props } from "./PostCard";
 
 export default function PostCardGrid(props: { items: Props[] }): JSXElement {
   return (
-    <div class="grid sm:grid-cols-2 gap-3">
+    <div class="grid sm:grid-cols-2 gap-1.5">
       <For each={props.items}>{(post) => <PostCard {...post} />}</For>
     </div>
   );
