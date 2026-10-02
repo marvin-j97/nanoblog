@@ -12,6 +12,8 @@ interface Props {
 const { page } = Astro.props;
 
 const publishedPosts = await getPublishedPosts();
+publishedPosts.sort((a, b) => +b.data.published_at - +a.data.published_at);
+
 const { pageCount } = createPagination(publishedPosts.length, config.layout.pageSize);
 const posts = getPage(publishedPosts, page, config.layout.pageSize);
 
