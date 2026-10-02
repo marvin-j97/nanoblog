@@ -12,10 +12,10 @@ const renderedPosts = await Promise.all(
     return {
       title: post.data.title,
       description: post.data.description,
-      slug: post.slug,
+      slug: post.data.slug ?? post.id,
       image: post.data.image,
       date: new Date(post.data.last_modified_at ?? post.data.published_at),
-      body: await post.render(),
+      body: post.body ?? "",
       searchTerms: post.data.searchTerms,
     };
   }),

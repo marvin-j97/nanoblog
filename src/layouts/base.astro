@@ -1,7 +1,7 @@
 ---
 import "@fontsource/inter";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import Footer from "../components/Footer.astro";
 import Topbar from "../components/Topbar.astro";
@@ -47,7 +47,7 @@ const siteUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="text-gray-700 dark:text-gray-400 dark:bg-gray-950">
     <Topbar />

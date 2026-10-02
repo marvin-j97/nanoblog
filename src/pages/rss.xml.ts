@@ -13,7 +13,7 @@ export async function GET() {
       title: post.data.title,
       description: post.data.description,
       pubDate: new Date(post.data.last_modified_at ?? post.data.published_at),
-      link: `/post/${post.slug}/`,
+      link: `/post/${post.data.slug ?? post.id}/`,
     })),
   });
 }

@@ -5,22 +5,25 @@ import TagList from "../../../components/TagList.astro";
 import config from "../../../config";
 import { getPublishedPosts } from "../../../data/posts";
 import BaseLayout from "../../../layouts/base.astro";
+import { getEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
 
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.data.slug ?? post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+// Load a rendered version of this post (HTML string)
+const full = await getEntry("blog", post.id);
+const contentHTML = full?.rendered?.html ?? "";
 
 const readingMinutes = Math.max(
   1,
-  Math.round(post.body.split(" ").length / config.post.readingTime.speed),
+  Math.round((post.body ?? "").split(" ").length / config.post.readingTime.speed),
 );
 ---
 
@@ -45,7 +48,7 @@ const readingMinutes = Math.max(
 
   <!-- Content -->
   <article class="my-10 w-full !max-w-full prose dark:prose-invert text-justify dark:prose-gray">
-    <Content />
+    <div set:html={contentHTML} />
   </article>
 
   <!-- Post footer -->

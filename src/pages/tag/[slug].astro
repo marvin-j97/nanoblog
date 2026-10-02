@@ -28,7 +28,7 @@ const taggedPosts = await getTaggedPosts(slug);
     <PostListing
       listStyle={config.layout.postListStyle}
       items={taggedPosts.map((post) => ({
-        slug: post.slug,
+        slug: post.data.slug ?? post.id,
         description: post.data.description,
         title: post.data.title,
         date: new Date(post.data.last_modified_at ?? post.data.published_at),
