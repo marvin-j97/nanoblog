@@ -27,7 +27,7 @@ const featuredPosts = publishedPosts
           <PostListing
             listStyle={config.layout.postListStyle}
             items={featuredPosts.map((post) => ({
-              slug: post.slug,
+              slug: post.data.slug ?? post.id,
               description: post.data.description,
               title: post.data.title,
               date: new Date(post.data.published_at),
@@ -45,7 +45,7 @@ const featuredPosts = publishedPosts
           <PostListing
             listStyle={config.layout.postListStyle}
             items={recentPosts.map((post) => ({
-              slug: post.slug,
+              slug: post.data.slug ?? post.id,
               description: post.data.description,
               title: post.data.title,
               date: new Date(post.data.published_at),
