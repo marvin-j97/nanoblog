@@ -52,17 +52,15 @@ const readingMinutes = Math.max(
   </article>
 
   <!-- Post footer -->
-  {
-    post.data.tags.length > 0 && (
-      <>
-        <hr class="h-1 mb-2 border-gray-200 dark:border-gray-700" />
-        <div class="flex flex-col gap-3">
-          <div class="dark:text-gray-300 italic">Tags</div>
-          <TagList items={post.data.tags} />
-        </div>
-      </>
-    )
-  }
+  {post.data.tags.length > 0 && (
+    <>
+      <hr class="h-1 mb-2 border-gray-200 dark:border-gray-700" />
+      <div class="flex flex-col gap-3">
+        <div class="dark:text-gray-300 italic">Tags</div>
+        <TagList items={post.data.tags} />
+      </div>
+    </>
+  )}
 </BaseLayout>
 
 <style is:global>
@@ -104,7 +102,16 @@ const readingMinutes = Math.max(
   }
 
   .dark article table {
-    border: 1px solid #374151;
+    border: 2px solid #1d232d;
+  }
+
+  .dark article table th {
+    border-bottom: 1px solid #1d232d;
+  }
+
+  article table th,
+  article table td {
+    padding: 0.6rem !important;
   }
 
   code:before,
@@ -113,7 +120,8 @@ const readingMinutes = Math.max(
   }
 
   .astro-code {
-    font-size: 16px;
+    font-size: 14px;
+    font-family: monospace;
   }
 
   p code {
