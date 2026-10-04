@@ -12,11 +12,11 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
       href={`${config.site.baseUrl}/post/${props.slug}`}
       aria-label={props.title}
     >
-      <div class="cursor-pointer transition-all hover:bg-blue-300/30 dark:hover:bg-blue-500/15 hover:brightness-90 flex gap-3 bg-gray-300/20 dark:bg-blue-900/10 p-2.5 rounded-lg">
+      <div class="cursor-pointer transition-all hover:bg-blue-300/30 dark:hover:bg-blue-500/15 hover:brightness-90 flex gap-3 bg-gray-300/20 dark:bg-blue-900/10 px-2.5 py-2 rounded-lg">
         <Show when={props.showImage}>
           <div>
             <div
-              class="bg-blue-500/10 object-cover bg-center w-[100px] h-full aspect-2 rounded-lg bg-cover"
+              class="bg-blue-500/10 object-cover bg-center w-[120px] h-full aspect-[1.6] rounded-lg bg-cover"
               style={{
                 "background-image": props.image
                   ? `url(${config.site.baseUrl + props.image})`
@@ -27,7 +27,7 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
         </Show>
         <div class="flex flex-col truncate">
           <div
-            class="text-lg font-medium text-blue-700 dark:text-blue-300 truncate"
+            class="font-medium text-blue-700 dark:text-blue-300 truncate"
           >
             {props.title}
           </div>
