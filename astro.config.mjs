@@ -10,6 +10,9 @@ export default defineConfig({
   integrations: [
     unocss({
       injectReset: true,
+      content: {
+        filesystem: ["./src/content/blog/*.{astro,md,mdx}"],
+      },
     }),
     sitemap(),
     solidJs(),
