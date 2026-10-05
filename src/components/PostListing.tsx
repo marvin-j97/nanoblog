@@ -12,7 +12,7 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
       href={`${config.site.baseUrl}/post/${props.slug}`}
       aria-label={props.title}
     >
-      <div class="cursor-pointer transition-all hover:bg-blue-300/30 dark:hover:bg-blue-500/15 hover:brightness-90 flex gap-3 bg-gray-300/20 dark:bg-blue-900/10 px-2.5 py-2 rounded-lg">
+      <div class="cursor-pointer transition-all hover:bg-blue-300/30 dark:hover:bg-blue-500/15 hover:brightness-90 flex items-center gap-3 bg-gray-300/20 dark:bg-blue-900/10 px-2.5 py-2 rounded-lg">
         <Show when={props.showImage}>
           <div>
             <div
@@ -31,12 +31,12 @@ function CompactPostListItem(props: Props & { showImage: boolean }): JSXElement 
           >
             {props.title}
           </div>
-          <div class="text-xs mb-1 text-gray-500 dark:text-gray-400">
+          <div class="text-xs my-1 text-gray-500 dark:text-gray-400">
             {new Intl.DateTimeFormat("en", {
               dateStyle: "medium",
             }).format(props.date)}
           </div>
-          <div class="mt-1 dark:text-gray-400 text-gray-500 text-xs truncate">{props.description}</div>
+          <div class="mt-2 dark:text-gray-400 text-gray-500 text-xs truncate">{props.description}</div>
         </div>
       </div>
     </a>
